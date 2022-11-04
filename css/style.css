@@ -68,3 +68,7 @@ body{
 .task.done span{
   text-decoration: line-through;
 }
+
+.tasks-area h3{
+  text-align: center;
+}

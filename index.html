@@ -25,15 +25,14 @@
     </div>
 
     <div class="tasks-area">
-      <ul>
+      <ul v-if="tasks.length > 0">
         <li v-for="(task, index) in tasks" class="task" :class="{'done': task.done}"
         @click = "task.done = !task.done">
           <span>{{task.text}}</span>
           <i @click.stop="removeTask(index)" class="fa-solid fa-x"></i>
         </li>
       </ul>
-
-      <!-- <h3>Non ci sono task da completare &#128526;!</h3> -->
+      <h3 v-else>Non ci sono task da completare &#128526;!</h3>
     </div>
   </div>
   <script src="js/script.js"></script>
