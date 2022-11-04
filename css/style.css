@@ -40,6 +40,12 @@ body{
   cursor: pointer;
 }
 
+.input-area .error{
+  color: red;
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
 .tasks-area{
   background-color: lightcyan;
   border-radius: 15px;

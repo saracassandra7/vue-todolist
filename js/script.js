@@ -14,6 +14,7 @@ const {createApp} = Vue;
 createApp({
   data(){
     return{
+      errorString: ' ',
       //array di tasks, in cui ogni task è un oggetto
       tasks:[
         {
@@ -33,8 +34,17 @@ createApp({
   },
 
   methods:{
-  
-
+    removeTask(index){
+      this.errorString = ' ';
+      if(this.tasks[index].done){
+        //se la task è stata fatta la rimuovo
+        this.tasks.splice(index, 1);
+        
+      }else{
+        //se non è stata fatta scrivo il messaggio di errore
+        this.errorString = 'Attenzione! Non si può eliminare la task prima di averla fatta!'
+      }
+    }
   }
 }).mount('#app')
 

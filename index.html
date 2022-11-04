@@ -20,6 +20,7 @@
     <div class="input-area">
       <input type="text" placeholder="add new task">
       <button>Aggiungi</button>
+      <p class="error">{{errorString}}</p>
     </div>
 
     <div class="tasks-area">
@@ -27,7 +28,7 @@
         <li v-for="(task, index) in tasks" class="task" :class="{'done': task.done}"
         @click = "task.done = !task.done">
           <span>{{task.text}}</span>
-          <i class="fa-solid fa-x"></i>
+          <i @click.stop="removeTask(index)" class="fa-solid fa-x"></i>
         </li>
       </ul>
 
