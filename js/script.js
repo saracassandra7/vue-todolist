@@ -14,8 +14,8 @@ const {createApp} = Vue;
 createApp({
   data(){
     return{
-      errorString: ' ',
-      newTaskString: ' ',
+      errorString: '',
+      newTaskString: '',
       //array di tasks, in cui ogni task è un oggetto
       tasks:[
         {
@@ -36,7 +36,7 @@ createApp({
 
   methods:{
     removeTask(index){
-      this.errorString = ' ';
+      this.errorString = '';
       if(this.tasks[index].done){
         //se la task è stata fatta la rimuovo
         this.tasks.splice(index, 1);
@@ -48,7 +48,7 @@ createApp({
     },
 
     createTask(){
-      this.errorString = ' ';
+      this.errorString = '';
       //controllo se la lunghezza del messaggio è < 5 caratteri
       if(this.newTaskString.length < 5){
         //se sì, mando il messaggio di errore
@@ -62,10 +62,9 @@ createApp({
         //lo pusho in cima all'array di tasks
         this.tasks.unshift(newTask);
         //svuoto l'input
-        this.newTaskString = ' ';
+        this.newTaskString = '';
       }
       
     }
   }
 }).mount('#app')
-

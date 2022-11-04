@@ -6,6 +6,7 @@
 
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(252, 252, 245);
 }
 
 .container{
@@ -28,11 +29,11 @@ body{
 
 .input-area input, .input-area button{
   padding: 10px 15px;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .input-area input{
-  width: 300px;
+  width: 400px;
   margin-right: 15px;
 }
 
@@ -67,6 +68,10 @@ body{
 
 .task.done span{
   text-decoration: line-through;
+}
+
+.task i{
+  padding: 8px;
 }
 
 .tasks-area h3{
