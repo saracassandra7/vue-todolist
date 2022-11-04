@@ -18,8 +18,9 @@
     </div>
 
     <div class="input-area">
-      <input type="text" placeholder="add new task">
-      <button>Aggiungi</button>
+      <input @keyup.enter ="createTask()" type="text" placeholder="add new task" 
+      v-model.trim = "newTaskString">
+      <button @click="createTask()">Aggiungi</button>
       <p class="error">{{errorString}}</p>
     </div>
 

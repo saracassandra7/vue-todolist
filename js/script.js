@@ -15,6 +15,7 @@ createApp({
   data(){
     return{
       errorString: ' ',
+      newTaskString: ' ',
       //array di tasks, in cui ogni task è un oggetto
       tasks:[
         {
@@ -44,6 +45,26 @@ createApp({
         //se non è stata fatta scrivo il messaggio di errore
         this.errorString = 'Attenzione! Non si può eliminare la task prima di averla fatta!'
       }
+    },
+
+    createTask(){
+      this.errorString = ' ';
+      //controllo se la lunghezza del messaggio è < 5 caratteri
+      if(this.newTaskString.length < 5){
+        //se sì, mando il messaggio di errore
+        this.errorString = 'Attenzione! il messaggio deve avere almeno 5 caratteri'
+      }else{
+        //altrimenti creo il nuovo oggetto task
+        const newTask = {
+          text: this.newTaskString,
+          done: false
+        }
+        //lo pusho in cima all'array di tasks
+        this.tasks.unshift(newTask);
+        //svuoto l'input
+        this.newTaskString = ' ';
+      }
+      
     }
   }
 }).mount('#app')
